@@ -8,6 +8,7 @@ import (
 
 func main() {
 
+	service.InitializeService()
 	shell := ishell.New()
 	shell.SetPrompt("Tweeter >> ")
 	shell.Print("Type 'help' to know commands\n")
@@ -38,17 +39,20 @@ func main() {
 	})
 
 	shell.AddCmd(&ishell.Cmd{
-		Name: "showTweet",
-		Help: "Shows a tweet",
+		Name: "showTweets",
+		Help: "Shows all the tweets",
 		Func: func(c *ishell.Context) {
 
 			defer c.ShowPrompt(true)
 
-			tweet := service.GetTweet()
+			tweets := service.GetTweets()
 
-			c.Println("Tweet text: ", tweet.Text)
-			c.Println("User account: ", tweet.User)
-			c.Println("Tweeted at: ", tweet.Date)
+			for _, tweet := range tweets {
+				c.Println(">> Tweet text: ", tweet.Text)
+				c.Println(">> User account: ", tweet.User)
+				c.Println(">> publishTweeted at: ", tweet.Date)
+				c.Println("=========================================>")
+			}
 
 			return
 		},

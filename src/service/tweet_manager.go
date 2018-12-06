@@ -5,7 +5,13 @@ import (
 	"github.com/twitteer-go/src/domain"
 )
 
-var Tweet domain.Tweet
+//var Tweet domain.Tweet
+var Tweets []domain.Tweet
+
+
+func InitializeService() {
+	Tweets = make([]domain.Tweet,0)
+}
 
 func PublishTweet(tweet *domain.Tweet) error {
 	if tweet.User == "" {
@@ -17,10 +23,10 @@ func PublishTweet(tweet *domain.Tweet) error {
 	if len(tweet.Text) > 140 {
 		return errors.New("character exceeded")
 	}
-	Tweet = *tweet
+	Tweets = append(Tweets,*tweet)
 	return nil
 }
 
-func GetTweet() domain.Tweet {
-	return Tweet
+func GetTweets() []domain.Tweet {
+	return Tweets
 }

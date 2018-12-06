@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="967bcbb9-cf5b-40ac-9f63-4c5bc80f88ca" name="Default Changelist" comment="">
+    <list default="true" id="967bcbb9-cf5b-40ac-9f63-4c5bc80f88ca" name="Default Changelist" comment="add test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/tweet.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/tweet.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/tweet_manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tweet_manager.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/tweet_manager_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tweet_manager_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/twetteer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/twetteer.go" afterDir="false" />
@@ -12,13 +14,42 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/twitteer_go$tweet_manager_test_go.out" NAME="tweet_manager_test.go Coverage Results" MODIFIED="1544124449582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="29" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/tweet_manager_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="87" column="135" selection-start-line="87" selection-start-column="135" selection-end-line="87" selection-end-column="135" />
+            <state relative-caret-position="-6">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/testing/testing.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="791" selection-start-line="791" selection-end-line="791" />
             </state>
           </provider>
         </entry>
@@ -26,26 +57,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domain/tweet.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/twetteer.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#16#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twetteer.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="67" column="57" lean-forward="true" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/service/tweet_manager.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="899">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -59,6 +93,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fmt</find>
+    </findStrings>
+  </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,10 +106,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/domain/Tweet.go" />
-        <option value="$PROJECT_DIR$/src/domain/tweet.go" />
         <option value="$PROJECT_DIR$/src/service/tweet_manager.go" />
-        <option value="$PROJECT_DIR$/src/service/tweet_manager_test.go" />
+        <option value="$PROJECT_DIR$/src/domain/tweet.go" />
         <option value="$PROJECT_DIR$/src/twetteer.go" />
+        <option value="$PROJECT_DIR$/src/service/tweet_manager_test.go" />
       </list>
     </option>
   </component>
@@ -134,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build twetteer.go">
+  <component name="RunManager" selected="Go Test.tweet_manager_test.go">
     <configuration name="go build twetteer.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="twitteer-go" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -156,40 +195,40 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build twetteer.go" />
         <item itemvalue="Go Test.tweet_manager_test.go" />
+        <item itemvalue="Go Build.go build twetteer.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="tweet_manager_test_go - 2018.12.05 at 16h 15m 12s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 01m 03s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.05 at 16h 15m 20s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 01m 32s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.05 at 16h 15m 38s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 01m 46s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.05 at 16h 16m 59s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 02m 34s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 23m 40s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 02m 50s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 27m 37s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 16m 21s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 29m 05s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 38m 57s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 29m 48s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 15h 42m 13s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 30m 48s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 16h 27m 18s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="tweet_manager_test_go - 2018.12.06 at 10h 33m 39s.xml">
+    <history-entry file="tweet_manager_test_go - 2018.12.06 at 16h 27m 29s.xml">
       <configuration name="tweet_manager_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
@@ -202,7 +241,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34457833" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -212,10 +251,11 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.16237482" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,31 +268,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="add test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/service/tweet_manager.go">
+    <entry file="file:///usr/local/go/src/testing/testing.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="177">
+          <caret line="791" selection-start-line="791" selection-end-line="791" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/tweet.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#16#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/tweet_manager_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="87" column="135" selection-start-line="87" selection-start-column="135" selection-end-line="87" selection-end-column="135" />
+        <state relative-caret-position="-6">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/twetteer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        <state relative-caret-position="313">
+          <caret line="67" column="57" lean-forward="true" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/tweet_manager.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>

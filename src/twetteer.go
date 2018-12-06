@@ -4,11 +4,12 @@ import (
 	"github.com/abiosoft/ishell"
 	"github.com/twitteer-go/src/domain"
 	"github.com/twitteer-go/src/service"
+	"reflect"
 )
 
 func main() {
 
-	service.InitializeService()
+	tweetManager := service.InitializeService()
 	shell := ishell.New()
 	shell.SetPrompt("Tweeter >> ")
 	shell.Print("Type 'help' to know commands\n")
@@ -30,7 +31,7 @@ func main() {
 
 			tweet := domain.NewTweet(user, text)
 
-			service.PublishTweet(tweet)
+			tweetManager.PublishTweet(tweet)
 
 			c.Print("Tweet sent\n")
 
@@ -45,13 +46,49 @@ func main() {
 
 			defer c.ShowPrompt(true)
 
-			tweets := service.GetTweets()
+			tweets := tweetManager.GetTweets()
 
 			for _, tweet := range tweets {
-				c.Println(">> Tweet text: ", tweet.Text)
-				c.Println(">> User account: ", tweet.User)
-				c.Println(">> publishTweeted at: ", tweet.Date)
-				c.Println("=========================================>")
+				c.Println(tweet)
+			}
+
+			return
+		},
+	})
+
+	shell.AddCmd(&ishell.Cmd{
+		Name: "showUsers",
+		Help: "Shows all the users",
+		Func: func(c *ishell.Context) {
+
+			defer c.ShowPrompt(true)
+
+			tweets := tweetManager.Tweets
+
+			usuarios := reflect.ValueOf(tweets).MapKeys()
+			for _, usuario := range usuarios {
+				c.Println(usuario)
+			}
+
+			return
+		},
+	})
+
+	shell.AddCmd(&ishell.Cmd{
+		Name: "showTweetsByUsername",
+		Help: "Shows all tweets of an users",
+		Func: func(c *ishell.Context) {
+
+			defer c.ShowPrompt(true)
+
+			c.Print("Write your username: ")
+
+			user := c.ReadLine()
+
+			tweets := tweetManager.GetTweetsByUser(user)
+
+			for _, tweet := range tweets {
+				c.Println(tweet)
 			}
 
 			return

@@ -1,0 +1,100 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "OA3l4P8rsItRg0zU0NxZb2D4sbg=",
+			"path": "github.com/DATA-DOG/godog",
+			"revision": "a15ef6e29aff0b8fcde24af1fa2211b91362722e",
+			"revisionTime": "2018-11-26T12:13:48Z"
+		},
+		{
+			"checksumSHA1": "LFdAyctmjlkOR0WJvQZ1raImCSQ=",
+			"path": "github.com/DATA-DOG/godog/cmd/godog",
+			"revision": "a15ef6e29aff0b8fcde24af1fa2211b91362722e",
+			"revisionTime": "2018-11-26T12:13:48Z"
+		},
+		{
+			"checksumSHA1": "fV6OpCR21UlpN5GkbExA1Gntd8c=",
+			"path": "github.com/DATA-DOG/godog/colors",
+			"revision": "a15ef6e29aff0b8fcde24af1fa2211b91362722e",
+			"revisionTime": "2018-11-26T12:13:48Z"
+		},
+		{
+			"checksumSHA1": "eT37F5UgVxJ7cygCfyI4f5rJemQ=",
+			"path": "github.com/DATA-DOG/godog/gherkin",
+			"revision": "a15ef6e29aff0b8fcde24af1fa2211b91362722e",
+			"revisionTime": "2018-11-26T12:13:48Z"
+		},
+		{
+			"checksumSHA1": "hYAz0xdLlAsREfDiRvZyKV/UCKI=",
+			"path": "github.com/abiosoft/ishell",
+			"revision": "d2bd206ead0ec66d7b0f68c138a5d2f7cf600180",
+			"revisionTime": "2018-11-26T05:43:29Z"
+		},
+		{
+			"checksumSHA1": "JB9eXmXR0wEd8jXEIwep+hiDO3o=",
+			"path": "github.com/abiosoft/readline",
+			"revision": "155bce2042db95a783081fab225e74dd879055b0",
+			"revisionTime": "2018-06-07T04:04:30Z"
+		},
+		{
+			"checksumSHA1": "dvabztWVQX8f6oMLRyv4dLH+TGY=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "8019298d9fa5a04fc2ad10ae03349df3483096a6",
+			"revisionTime": "2018-10-28T12:27:15Z"
+		},
+		{
+			"checksumSHA1": "BxH9xJUqczhpL57gfKZe2/VlBHY=",
+			"path": "github.com/fatih/color",
+			"revision": "3f9d52f7176a6927daacff70a3e8d1dc2025c53e",
+			"revisionTime": "2018-10-10T23:13:11Z"
+		},
+		{
+			"checksumSHA1": "yLQg8NdQKYqqytcvKA/0EBkOIkw=",
+			"path": "github.com/flynn-archive/go-shlex",
+			"revision": "3f9db97f856818214da2e1057f8ad84803971cff",
+			"revisionTime": "2015-05-15T14:53:56Z"
+		},
+		{
+			"checksumSHA1": "XEV3BI3nHA/rNa/tIgB7fVCrDww=",
+			"origin": "github.com/fatih/color/vendor/github.com/mattn/go-colorable",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "3f9d52f7176a6927daacff70a3e8d1dc2025c53e",
+			"revisionTime": "2018-10-10T23:13:11Z"
+		},
+		{
+			"checksumSHA1": "y/A5iuvwjytQE2CqVuphQRXR2nI=",
+			"origin": "github.com/fatih/color/vendor/github.com/mattn/go-isatty",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "3f9d52f7176a6927daacff70a3e8d1dc2025c53e",
+			"revisionTime": "2018-10-10T23:13:11Z"
+		},
+		{
+			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/pmezard/go-difflib/difflib",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "8019298d9fa5a04fc2ad10ae03349df3483096a6",
+			"revisionTime": "2018-10-28T12:27:15Z"
+		},
+		{
+			"checksumSHA1": "v3LEmqP4Cb6qGCIP7mJk7l2ZXw8=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "8019298d9fa5a04fc2ad10ae03349df3483096a6",
+			"revisionTime": "2018-10-28T12:27:15Z"
+		},
+		{
+			"checksumSHA1": "hEYaWw+8NP4vlt/idQaUfg3cWdM=",
+			"origin": "github.com/fatih/color/vendor/golang.org/x/sys/unix",
+			"path": "golang.org/x/sys/unix",
+			"revision": "3f9d52f7176a6927daacff70a3e8d1dc2025c53e",
+			"revisionTime": "2018-10-10T23:13:11Z"
+		},
+		{
+			"path": "https://github.com/DATA-DOG/godog",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/twitteer-go"
+}

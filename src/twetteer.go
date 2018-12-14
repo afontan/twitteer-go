@@ -1,15 +1,48 @@
 package main
 
 import (
+	"fmt"
 	"github.com/abiosoft/ishell"
+	"github.com/gin-gonic/gin"
 	"github.com/twitteer-go/src/domain"
 	"github.com/twitteer-go/src/service"
+	"net/http"
 	"reflect"
+	"strconv"
 )
+
+var tweetManager = service.InitializeService()
 
 func main() {
 
-	tweetManager := service.InitializeService()
+	tweet := domain.NewTextTweet("afontan", "hola mundo")
+
+	tweetManager.PublishTweet(tweet)
+
+	// API Code
+	router := gin.Default()
+
+	v1 := router.Group("/v1")
+	{
+		tweetRoute := v1.Group("/tweets")
+		{
+			tweetRoute.GET("", GetTweets)
+			tweetRoute.POST("/textTweet", PublishTextTweet)
+			tweetRoute.POST("/imageTweet", PublishImageTweet)
+			tweetRoute.POST("/quoteTweet", PublishQuoteTweet)
+			tweetRoute.GET("/:id", GetTweetById)
+		}
+		searchRoute := v1.Group("/search")
+		{
+			searchRoute.GET("/tweetsContaining/:string", SearchTweetsContaining)
+			searchRoute.GET("/tweetsByUsername/:username", GetTweetsByUser)
+		}
+		v1.GET("/", nil)
+	}
+
+	router.Run()
+
+	// Console Code
 	shell := ishell.New()
 	shell.SetPrompt("Tweeter >> ")
 	shell.Print("Type 'help' to know commands\n")
@@ -21,17 +54,44 @@ func main() {
 
 			defer c.ShowPrompt(true)
 
-			c.Print("Write your username: ")
+			selectedOption := c.MultiChoice([]string{"Text tweet","Image tweet", "Quote tweet",}, "Select an option")
 
-			user := c.ReadLine()
+			switch selectedOption {
+			case 0:
+				user, text := getUserAndText(c)
 
-			c.Print("Write your tweet: ")
+				tweet := domain.NewTextTweet(user, text)
 
-			text := c.ReadLine()
+				tweetManager.PublishTweet(tweet)
+			case 1:
+				user, text := getUserAndText(c)
 
-			tweet := domain.NewTweet(user, text)
+				c.Print("Write image url: ")
 
-			tweetManager.PublishTweet(tweet)
+				url := c.ReadLine()
+
+				tweet := domain.NewImageTweet(user, text, url)
+
+				tweetManager.PublishTweet(tweet)
+			case 2:
+				user, text := getUserAndText(c)
+
+				valuesText := []string{}
+				tweets := tweetManager.GetTweets()
+
+				for _, tweet := range tweets {
+					valuesText = append(valuesText, tweet.PrintableTweet())
+				}
+
+				selectedOption := c.MultiChoice(valuesText, "Select a tweet to get quoted")
+
+				tweet := domain.NewQuoteTweet(user, text, getUserByPrintableTweet(tweets, valuesText[selectedOption]))
+				tweetManager.PublishTweet(tweet)
+			default:
+				fmt.Println("Incorrect option")
+			}
+			
+
 
 			c.Print("Tweet sent\n")
 
@@ -98,3 +158,93 @@ func main() {
 	shell.Run()
 
 }
+
+
+func getUserAndText(c *ishell.Context) (string, string) {
+	c.Print("Write your username: ")
+
+	user := c.ReadLine()
+
+	c.Print("Write your tweet: ")
+
+	text := c.ReadLine()
+
+	return user, text
+}
+
+func getUserByPrintableTweet(tweets []domain.Tweet, searchedtweet string) (domain.Tweet) {
+	for _, tweet := range tweets {
+		if tweet.PrintableTweet() == searchedtweet {
+			return tweet
+		}
+	}
+	return nil
+}
+
+func PublishTextTweet(c *gin.Context) {
+	var tweet *domain.TextTweet
+	if err := c.ShouldBindJSON(&tweet); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Error" : err.Error()})
+	}else{
+		tweet = domain.NewTextTweet(tweet.GetUser(), tweet.GetText())
+		_, err := tweetManager.PublishTweet(tweet)
+		if err == nil {
+			c.JSON(http.StatusOK, "OK")
+		}else{
+			c.JSON(http.StatusBadRequest, err.Error())
+		}
+	}
+}
+
+func PublishImageTweet(c *gin.Context) {
+	var tweet *domain.ImageTweet
+	if err := c.ShouldBindJSON(&tweet); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Error" : err.Error()})
+	}else{
+		tweet = domain.NewImageTweet(tweet.GetUser(), tweet.GetText(), tweet.Url)
+		_, err := tweetManager.PublishTweet(tweet)
+		if err == nil {
+			c.JSON(http.StatusOK, "OK")
+		}else{
+			c.JSON(http.StatusBadRequest, err.Error())
+		}
+	}
+}
+
+func PublishQuoteTweet(c *gin.Context) {
+	var tweet *domain.QuoteDTOTweet
+	if err := c.ShouldBindJSON(&tweet); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Error" : err.Error()})
+	}else{
+		if quotedTweet := tweetManager.GetTweetById(tweet.QuotedId); quotedTweet != nil{
+			tweetToPost := domain.NewQuoteTweet(tweet.GetUser(), tweet.GetText(), quotedTweet)
+			_, err := tweetManager.PublishTweet(tweetToPost)
+			if err == nil {
+				c.JSON(http.StatusOK, "OK")
+			}else{
+				c.JSON(http.StatusBadRequest, err.Error())
+			}
+		}else{
+			c.JSON(http.StatusBadRequest, "Invaled quoted ID")
+		}
+	}
+}
+
+func GetTweets(c *gin.Context) {
+	c.JSON(http.StatusOK, tweetManager.GetTweets())
+}
+
+func GetTweetById(c *gin.Context) {
+	id,_ := strconv.Atoi(c.Param("id"))
+	c.JSON(http.StatusOK, tweetManager.GetTweetById(id))
+}
+
+
+func GetTweetsByUser(c *gin.Context) {
+
+}
+
+func SearchTweetsContaining(c *gin.Context) {
+
+}
+
